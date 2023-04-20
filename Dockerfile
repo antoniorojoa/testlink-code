@@ -2,11 +2,18 @@ FROM pensiero/apache-php-mysql:latest
 
 RUN printf '#!/bin/sh\nexit 0' > /usr/sbin/policy-rc.d
 
-RUN rm -rf /var/lib/mysql/mysql
+
+
+RUN apt remove --purge 'mysql*' -y
+RUN apt autoremove
+RUN apt autoclean
+RUN rm -rf /etc/mysql /var/lib/mysql/
+
+
 
 RUN apt update -q && apt install -yqq --force-yes \
     mysql-server
-RUN apt install php7.4-gd -y
+#RUN apt install php7.4-gd -y
 
 # Start mysql
 RUN /etc/init.d/mysql 'start'
