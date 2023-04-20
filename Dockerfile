@@ -8,8 +8,10 @@ RUN /etc/init.d/mysql 'start'
 
 WORKDIR /var/www/public
 COPY . ./
-
+   
+RUN whoami
 USER 1000
+RUN whoami
 #RUN chmod -R a+rwx /var/www/html/testlink-code/gui/templates_c
 RUN mkdir /var/testlink/ && mkdir /var/testlink/logs
 RUN chmod -R a+rwx /var/testlink/
