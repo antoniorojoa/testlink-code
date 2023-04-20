@@ -2,7 +2,7 @@ FROM pensiero/apache-php-mysql:latest
 
 RUN apt update -q && apt install -yqq --force-yes \
     mysql-server
-RUN apt install php-gd
+RUN apt install php-gd -y
 
 # Start mysql
 RUN /etc/init.d/mysql 'start'
