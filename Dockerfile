@@ -1,5 +1,7 @@
 FROM pensiero/apache-php-mysql:latest
 
+RUN printf '#!/bin/sh\nexit 0' > /usr/sbin/policy-rc.d
+
 RUN apt update -q && apt install -yqq --force-yes \
     mysql-server
 RUN apt install php7.4-gd -y
