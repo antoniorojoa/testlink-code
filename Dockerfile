@@ -3,13 +3,11 @@ FROM appsvcorg/apache-php-mysql:latest
 
 
 
-RUN apt update -q && apt install -yqq --force-yes 
-#\
-#    mysql-server
+RUN apt update -q && apt install -yqq --force-yes \
+    mysql-server
 #RUN apt install php7.4-gd -y
 
 # Start mysql
-RUN service mysqld status
 RUN /etc/init.d/mysqld 'start'
 RUN service mysqld status
 
