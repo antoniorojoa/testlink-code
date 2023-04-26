@@ -9,8 +9,9 @@ RUN apt update -q && apt install -yqq --force-yes
 #RUN apt install php7.4-gd -y
 
 # Start mysql
-RUN /etc/init.d/mysql 'start'
-#RUN service mysql status
+RUN service mysqld status
+RUN /etc/init.d/mysqld 'start'
+RUN service mysqld status
 
 WORKDIR /var/www/public
 COPY . ./
