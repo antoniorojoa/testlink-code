@@ -20,7 +20,9 @@ RUN /etc/init.d/mysql start
 
 EXPOSE 80 3306
 
-WORKDIR /var/www/public
+RUN rm /var/www/html/index.html
+#WORKDIR /var/www/public
+WORKDIR /var/www/html
 COPY . ./
 
 #RUN chmod -R a+rwx /var/www/html/testlink-code/gui/templates_c
