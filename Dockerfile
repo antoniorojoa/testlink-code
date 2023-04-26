@@ -9,15 +9,16 @@ RUN apt update -q && apt install -yqq --force-yes \
     mariadb-server mariadb-client php apache2
 #RUN apt install php7.4-gd -y
 
+RUN /etc/init.d/apache2 start
 # Start mysql
-#RUN /etc/init.d/mysql 'start'
-RUN service mysql start
+RUN /etc/init.d/mysql start
+
 #RUN service apache status
 
-RUN /etc/init.d/apache2 start
+
 #RUN /etc/init.d/apache2 status
 
-EXPOSE 80
+EXPOSE 80 443
 
 WORKDIR /var/www/public
 COPY . ./
