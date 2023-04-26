@@ -2,6 +2,8 @@
 #FROM appsvcorg/apache-php-mysql:latest
 FROM ubuntu:18.04
 
+ENV TZ=Europe/Madrid
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN apt update -q && apt install -yqq --force-yes \
     mysql-server php apache2
