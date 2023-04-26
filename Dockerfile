@@ -17,6 +17,8 @@ RUN apt update -q && apt install -yqq --force-yes \
 RUN /etc/init.d/apache2 start
 #RUN /etc/init.d/apache2 status
 
+EXPOSE 80
+
 WORKDIR /var/www/public
 COPY . ./
 
