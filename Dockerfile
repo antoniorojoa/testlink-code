@@ -1,6 +1,6 @@
 #FROM pensiero/apache-php-mysql:latest
 #FROM appsvcorg/apache-php-mysql:latest
-FROM ubuntu:latest
+FROM ubuntu:18.04
 
 
 RUN apt update -q && apt install -yqq --force-yes \
