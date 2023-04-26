@@ -4,7 +4,7 @@ FROM appsvcorg/apache-php-mysql:latest
 
 
 RUN apt update -q && apt install -yqq --force-yes \
-    mysql-server-5.7 mysql-server
+    mysql-server-5.7 mysql-server mysql-client-5.7
 #RUN apt install php7.4-gd -y
 
 # Start mysql
