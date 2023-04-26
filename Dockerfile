@@ -1,10 +1,10 @@
 #FROM pensiero/apache-php-mysql:latest
-FROM appsvcorg/apache-php-mysql:latest
-
+#FROM appsvcorg/apache-php-mysql:latest
+FROM ubuntu:latest
 
 
 RUN apt update -q && apt install -yqq --force-yes \
-    mysql-server-5.7 mysql-server mysql-client-5.7
+    mysql-server-5.7 php7.4 apache2
 #RUN apt install php7.4-gd -y
 
 # Start mysql
