@@ -14,6 +14,9 @@ RUN apt update -q && apt install -yqq --force-yes \
 #RUN service mysql status
 #RUN service apache status
 
+RUN /etc/init.d/apache2 start
+RUN /etc/init.d/apache2 status
+
 WORKDIR /var/www/public
 COPY . ./
 
