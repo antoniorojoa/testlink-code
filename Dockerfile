@@ -11,7 +11,7 @@ RUN apt update -q && apt install -yqq --force-yes \
 
 # Start mysql
 #RUN /etc/init.d/mysql 'start'
-#RUN service mysql status
+RUN service mysql start
 #RUN service apache status
 
 RUN /etc/init.d/apache2 start
