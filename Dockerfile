@@ -6,7 +6,7 @@ ENV TZ=Europe/Madrid
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 RUN apt update -q && apt install -yqq --force-yes \
-    mariadb-server mariadb-client php apache2 apache2-utils vim
+    mysql-server mysql-client php php7.2-gd php-mysql apache2 apache2-utils vim
 #RUN apt install php7.4-gd -y
 
 #RUN /etc/init.d/apache2 start
