@@ -14,15 +14,15 @@ RUN apt update -q && apt install -yqq --force-yes \
 RUN /etc/init.d/mysql start
 
 #RUN service apache status
-
+ENV PROJECT_PATH=/var/www PROJECT_PUBLIC_DIR=public APACHE_RUN_USER=www-data APACHE_RUN_GROUP=www-data APACHE_LOG_DIR=/var/log/apache2 APACHE_LOCK_DIR=/var/lock/apache2
 
 #RUN /etc/init.d/apache2 status
 
 EXPOSE 80 3306
 
-RUN rm /var/www/html/index.html
-#WORKDIR /var/www/public
-WORKDIR /var/www/html
+#RUN rm /var/www/html/index.html
+WORKDIR /var/www/public
+#WORKDIR /var/www/html
 COPY . ./
 
 #RUN chmod -R a+rwx /var/www/html/testlink-code/gui/templates_c
