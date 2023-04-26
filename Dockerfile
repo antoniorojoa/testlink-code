@@ -1,18 +1,11 @@
-FROM pensiero/apache-php-mysql:latest
-
-RUN printf '#!/bin/sh\nexit 0' > /usr/sbin/policy-rc.d
-
-
-
-RUN apt remove --purge 'mysql*' -y
-RUN apt autoremove
-RUN apt autoclean
-RUN rm -rf /etc/mysql /var/lib/mysql/
+#FROM pensiero/apache-php-mysql:latest
+FROM appsvcorg/apache-php-mysql:latest
 
 
 
-RUN apt update -q && apt install -yqq --force-yes \
-    mysql-server
+RUN apt update -q && apt install -yqq --force-yes 
+#\
+#    mysql-server
 #RUN apt install php7.4-gd -y
 
 # Start mysql
